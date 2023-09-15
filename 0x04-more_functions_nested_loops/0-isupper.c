@@ -1,3 +1,4 @@
+/* 0-isupper.c */
 #include "main.h"
 
 /**
@@ -8,6 +9,6 @@
  */
 int _isupper(int c)
 {
-    /* Check if the character is within the uppercase ASCII range */
-    return (c >= 'A' && c <= 'Z');
+	/* Check if the character is within the uppercase ASCII range */
+	return (c >= 'A' && c <= 'Z');
 }
