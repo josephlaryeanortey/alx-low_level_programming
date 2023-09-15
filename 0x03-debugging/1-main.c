@@ -2,6 +2,7 @@
 
 /**
  * main - causes an infinite loop
+ *
  * Return: Always 0
  */
 
@@ -13,7 +14,8 @@ int main(void)
 
 	i = 0;
 
-	/* Commented out the problematic code
+	/*
+	 * Commented out the problematic code
 	 * while (i < 10)
 	 * {
 	 *     putchar(i);
