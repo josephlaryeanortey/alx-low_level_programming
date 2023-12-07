@@ -1,45 +1,21 @@
-#include <stdio.h>
+def is_palindrome(number):
+    return str(number) == str(number)[::-1]
 
-/**
- * is_palindrome - Check if a number is a palindrome.
- * @num: The number to check.
- *
- * Return: 1 if the number is a palindrome, 0 otherwise.
- */
-int is_palindrome(int num) {
-    int reversed = 0, original = num;
+def find_largest_palindrome():
+    max_palindrome = 0
 
-    while (num > 0) {
-        reversed = reversed * 10 + num % 10;
-        num /= 10;
-    }
+    for i in range(100, 1000):
+        for j in range(i, 1000):
+            product = i * j
+            if is_palindrome(product) and product > max_palindrome:
+                max_palindrome = product
 
-    return original == reversed;
-}
+    return max_palindrome
 
-/**
- * main - Find the largest palindrome made from the product of two 3-digit numbers.
- *
- * Return: Always 0.
- */
-int main(void) {
-    int max_palindrome = 0;
+# Find the largest palindrome
+result = find_largest_palindrome()
 
-    for (int i = 100; i < 1000; i++) {
-        for (int j = 100; j < 1000; j++) {
-            int product = i * j;
-            if (is_palindrome(product) && product > max_palindrome) {
-                max_palindrome = product;
-            }
-        }
-    }
-
-    // Save the result in the specified file
-    FILE *file = fopen("102-result", "w");
-    if (file != NULL) {
-        fprintf(file, "%d", max_palindrome);
-        fclose(file);
-    }
-
-    return 0;
-}
+# Save the result to the specified file
+file_path = "alx-low_level_programming/0x17-doubly_linked_lists/102-result"
+with open(file_path, "w") as file:
+    file.write(str(result))
